@@ -1,0 +1,38 @@
+<h1 mat-dialog-title>Emp Form</h1>
+<div mat-dialog-content>
+    <form [formGroup]="empForm" (ngSubmit)="onFormSubmit()">
+        <div class="row">
+            <mat-form-field appearance="outline" class="full-width">
+                <mat-label>Name</mat-label>
+                <input matInput type="text" placeholder="Enter Name" formControlName="name">
+                <!-- <mat-error *ngIf="empForm.get('name')?.hasError('required')">
+                    Name is required
+                </mat-error> -->
+            </mat-form-field>
+            <mat-form-field appearance="outline" class="full-width">
+                <mat-label>Age</mat-label>
+                <input matInput type="number" placeholder="Enter Age" formControlName="age">
+            </mat-form-field>
+            <mat-form-field appearance="outline" class="full-width">
+                <mat-label>Dept</mat-label>
+                <input matInput type="text" placeholder="Enter Dept" formControlName="dept">
+            </mat-form-field>
+            <mat-form-field appearance="outline" class="full-width">
+                <mat-label>Salary</mat-label>
+                <input matInput type="number" placeholder="Enter Salary" formControlName="salary">
+            </mat-form-field>
+            <!-- <mat-form-field appearance="outline" class="full-width">
+                <mat-label>Select State</mat-label>
+                <mat-select formControlName="state">
+                    <mat-option *ngFor="let state of states" [value]="state.value">
+                        {{ state.viewValue }}
+                    </mat-option> -->
+                <!-- </mat-select>
+            </mat-form-field> -->
+        </div>
+        <div mat-dialog-actions>
+            <button mat-raised-button mat-dialog-close>Cancel</button>
+            <button mat-raised-button color="primary" type="submit"type="submit" [disabled]="empForm.invalid">{{data ? 'Update' : 'Save'}}</button>
+        </div>
+    </form>
+</div>
