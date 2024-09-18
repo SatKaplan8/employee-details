@@ -2,9 +2,6 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { AddDetailsComponent } from '../components/add-details/add-details.component';
-import { UpdateDetailsComponent } from '../components/update-details/update-details.component';
-import { DeleteDetailsComponent } from '../components/delete-details/delete-details.component';
 import {MatIconModule} from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
 import {MatToolbarModule} from '@angular/material/toolbar';
@@ -17,16 +14,16 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import {MatDialog, MatDialogModule} from '@angular/material/dialog';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { EmpaddeditComponent } from './empaddedit/empaddedit.component';
-import {MatSelectModule} from '@angular/material/select';
+import { EmpaddeditComponent } from '../empAddEdit/empAddEdit.component';
+import {MatSelect, MatSelectModule} from '@angular/material/select';
+import {MatRadioModule} from '@angular/material/radio';
+import { MatOption, MatOptionModule } from '@angular/material/core';
+import { provideAnimations } from '@angular/platform-browser/animations';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    AddDetailsComponent,
-    UpdateDetailsComponent,
-    DeleteDetailsComponent,
     EmployeeListComponent,
     EmpaddeditComponent
   ],
@@ -46,11 +43,14 @@ import {MatSelectModule} from '@angular/material/select';
     FormsModule,
     ReactiveFormsModule,
     MatSortModule,
-    MatSelectModule
+    MatSelectModule,
+    MatRadioModule,
+    MatOption,
+    MatSelect
 
 
   ],
-  providers: [],
+  providers: [provideAnimations()],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
