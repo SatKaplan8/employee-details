@@ -1,17 +1,17 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Euser } from '../users.models';
+import { EmployeeDetails } from '../users.models';
 
 @Injectable({
   providedIn: 'root'
 })
 export class EmpServiceService {
-  private url = "http://localhost:7000/users";
+  private url = "http://localhost:5002/api/users";
   constructor(private http: HttpClient) { }
 
-  getEmp(): Observable<Euser[]> {
-    return this.http.get<Euser[]>(this.url);
+  getEmp(): Observable<EmployeeDetails[]> {
+    return this.http.get<EmployeeDetails[]>(`${this.url}`);
     
   }
   deleteEmp(id:any):Observable<any>{
@@ -24,3 +24,6 @@ export class EmpServiceService {
     return this.http.put<any>(`${this.url}/${id}`,user);
   }
 }
+
+
+

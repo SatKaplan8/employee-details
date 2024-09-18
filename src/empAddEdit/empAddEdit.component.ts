@@ -1,13 +1,13 @@
 import { Component, Inject } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup,ValidationErrors, ValidatorFn, Validators } from '@angular/forms';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
-import { EmpServiceService } from '../emp-service.service';
+import { EmpServiceService } from '../services/emp-service.service';
 import {MatSelectModule} from '@angular/material/select';
+import {MatFormFieldModule} from '@angular/material/form-field';
 
-interface State {
-  value: string;
-  viewValue: string;
-}
+
+
+
 @Component({
   selector: 'app-empaddedit',
   templateUrl: './empaddedit.component.html',
@@ -19,20 +19,22 @@ export class EmpaddeditComponent {
     name: new FormControl('',[Validators.required]),
     age: new FormControl(''),
     dept: new FormControl(''),
-    salary: new FormControl('')
+    salary: new FormControl(''),
+    gender: new FormControl(''),
+    state: new FormControl(''),
+    phone: new FormControl('')
+
   })
-  states: State[] = [
-    {value: 'karnataka', viewValue: 'Karnataka'},
-    {value: 'delhi', viewValue: 'Delhi'},
-    {value: 'jharkhand', viewValue: 'Jharkhand'},
-  ];
+  chooseGender: string | undefined;
+  genders: string[] = ['Male','Female'];
+  states: string[] = ['JH', 'KA', 'DL'];
   constructor(private formBuilder: FormBuilder, private empService: EmpServiceService, private dilaogRef: MatDialogRef<EmpaddeditComponent>, @Inject(MAT_DIALOG_DATA) public data: any) { }
   ngOnInit() {
     this.empForm.patchValue(this.data)
   }
   onFormSubmit() {
     if (this.data) {
-      this.empService.updateEmp(this.data.id, this.empForm.value).subscribe(() => {
+      this.empService.updateEmp(this.data._id, this.empForm.value).subscribe(() => {
         this.dilaogRef.close(true)
       })
     }
@@ -44,3 +46,5 @@ export class EmpaddeditComponent {
     }
   }
 }
+
+

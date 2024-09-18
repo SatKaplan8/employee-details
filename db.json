@@ -1,42 +1,45 @@
 {
   "users": [
     {
-      "name": "223",
-      "age": "21",
-      "dept": "SDE",
-      "salary": "900000",
-      "id": "c28b"
-    },
-    {
-      "emp_id": "13d8",
-      "name": "satyam",
-      "age": "22",
-      "dept": "HR",
-      "salary": "500000",
-      "id": "bed3"
-    },
-    {
-      "emp_id": "d164",
-      "name": "Shreya",
+      "name": "Shrey",
       "age": "23",
       "dept": "DA",
-      "salary": "800000",
-      "id": "25bc"
+      "salary": 800000,
+      "gender": "Female",
+      "state": "Jh",
+      "phone": 78807,
+      "id": "d164"
     },
     {
-      "emp_id": "258d",
-      "name": "Sam",
+      "name": "Si",
       "age": "21",
       "dept": "DA",
-      "salary": "700000",
-      "id": "3ff1"
+      "salary": 700000,
+      "gender": "Male",
+      "state": "KA",
+      "phone": 66666,
+      "id": "258d"
     },
     {
-      "id": "23fe",
-      "name": "sat",
+      "id": "26a9",
+      "name": "Push",
+      "age": 12,
+      "dept": "ok",
+      "salary": 3000,
+      "gender": "female",
+      "state": "JH",
+      "phone": 9494781290
+    },
+    {
+      "name": "StttLDDL",
       "age": 22,
-      "dept": "HR",
-      "salary": 50000
+      "dept": "SE",
+      "salary": 344949,
+      "gender": "Male",
+      "state": "DL",
+      "phone": "98393893",
+      "id": "b129"
     }
   ]
 }
+

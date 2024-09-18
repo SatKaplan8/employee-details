@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { UpdateDetailsComponent } from './update-details.component';
+import { EmpaddeditComponent } from './empAddEdit.component';
 
-describe('UpdateDetailsComponent', () => {
-  let component: UpdateDetailsComponent;
-  let fixture: ComponentFixture<UpdateDetailsComponent>;
+describe('EmpaddeditComponent', () => {
+  let component: EmpaddeditComponent;
+  let fixture: ComponentFixture<EmpaddeditComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [UpdateDetailsComponent]
+      declarations: [EmpaddeditComponent]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(UpdateDetailsComponent);
+    fixture = TestBed.createComponent(EmpaddeditComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
@@ -21,3 +21,5 @@ describe('UpdateDetailsComponent', () => {
     expect(component).toBeTruthy();
   });
 });
+
+

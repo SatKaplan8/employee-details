@@ -1,0 +1,28 @@
+.full-width {
+    width: 100%;
+    margin-bottom: 16px; /* Adds space between form fields */
+}
+
+.row {
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Adjusts the spacing between rows */
+}
+
+.mat-form-field {
+    width: 100%;
+}
+
+.mat-select {
+    width: 100%;
+}
+
+.mat-radio-group {
+    display: flex;
+    flex-direction: row; /* Align radio buttons horizontally */
+    gap: 16px; /* Adjusts the spacing between radio buttons */
+}
+.spacing-top {
+    margin-top: 24px; /* Adjust this value as needed */
+}
+

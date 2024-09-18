@@ -1,0 +1,50 @@
+<div mat-dialog-title>
+    <h1>Emp Form</h1>
+    <div>
+    <form [formGroup]="empForm" (ngSubmit)="onFormSubmit()">
+        <div mat-dialog-content>
+        <div class="row">
+            <mat-form-field appearance="outline" class="full-width">
+                <mat-label>Name</mat-label>
+                <input matInput type="text" placeholder="Enter Name" formControlName="name">
+            </mat-form-field>
+            <mat-form-field appearance="outline" class="full-width">
+                <mat-label>Age</mat-label>
+                <input matInput type="number" placeholder="Enter Age" formControlName="age">
+            </mat-form-field>
+            <mat-form-field appearance="outline" class="full-width">
+                <mat-label>Dept</mat-label>
+                <input matInput type="text" placeholder="Enter Dept" formControlName="dept">
+            </mat-form-field>
+            <mat-form-field appearance="outline" class="full-width">
+                <mat-label>Salary</mat-label>
+                <input matInput type="number" placeholder="Enter Salary" formControlName="salary">
+            </mat-form-field>
+            <div class="full-width">
+                <label id="example-radio-group-label">Choose the Gender</label>
+                <mat-radio-group aria-labelledby="example-radio-group-label" class="example-radio-group"
+                    formControlName="gender">
+                    <mat-radio-button class="example-radio-button" *ngFor="let gender of genders"
+                        [value]="gender">{{gender}}</mat-radio-button>
+                </mat-radio-group>
+            </div>
+            <mat-form-field appearance="outline">
+                <mat-label>Choose a state</mat-label>
+                <mat-select formControlName="state">
+                  <mat-option *ngFor="let val of states" [value]="val">{{val}}</mat-option>
+                </mat-select>
+              </mat-form-field>
+            <mat-form-field appearance="outline" class="full-width spacing-top">
+                <mat-label>Phone</mat-label>
+                <input matInput type="text" placeholder="Enter Phone" formControlName="phone">
+            </mat-form-field>
+        </div>
+        </div>
+        <div mat-dialog-actions>
+            <button mat-raised-button mat-dialog-close>Cancel</button>
+            <button mat-raised-button color="primary" type="submit" [disabled]="empForm.invalid">{{data ? 'Update' :
+                'Save'}}</button>
+        </div>
+    </form>
+    </div>
+    </div>

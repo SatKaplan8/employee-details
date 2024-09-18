@@ -1,11 +1,11 @@
 import { Component, OnInit, ViewChild, viewChild } from '@angular/core';
-import { Euser } from '../../../users.models';
+import { EmployeeDetails } from '../../../users.models';
 import { MatTableDataSource, MatTableModule } from '@angular/material/table';
-import { EmpServiceService } from '../../../app/emp-service.service';
+import { EmpServiceService } from '../../../services/emp-service.service';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort,MatSortModule } from '@angular/material/sort';
 import { MatDialog, MatDialogModule, MatDialogRef } from '@angular/material/dialog';
-import { EmpaddeditComponent } from '../../../app/empaddedit/empaddedit.component';
+import { EmpaddeditComponent } from '../../../empAddEdit/empAddEdit.component';
 
 @Component({
   selector: 'app-employee-list',
@@ -13,8 +13,8 @@ import { EmpaddeditComponent } from '../../../app/empaddedit/empaddedit.componen
   styleUrl: './employee-list.component.scss'
 })
 export class EmployeeListComponent implements OnInit {
-  users: Euser[] = []
-  displayedColumns: string[] = ['emp_id', 'name', 'age', 'dept', 'salary', 'action']
+  users: EmployeeDetails[] = []
+  displayedColumns: string[] = ['_id', 'name', 'age', 'dept', 'salary','gender','state','phone','action']
   dataSource!: MatTableDataSource<any>
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
@@ -41,8 +41,8 @@ export class EmployeeListComponent implements OnInit {
     }
   }
 
-  delUser(id: any) {
-    this.empService.deleteEmp(id).subscribe(() => {
+  delUser(_id: any) {
+    this.empService.deleteEmp(_id).subscribe(() => {
       this.loadEmp()
     })
   }
